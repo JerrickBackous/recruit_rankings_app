@@ -4,4 +4,4 @@
 
 pkgload::load_all(export_all = FALSE,helpers = FALSE,attach_testthat = FALSE)
 options( "golem.app.prod" = TRUE)
-recruit_rankings_app::run_app() # add parameters here (if any)
+recruitrankingsapp::run_app() # add parameters here (if any)

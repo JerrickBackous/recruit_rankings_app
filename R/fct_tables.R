@@ -14,21 +14,21 @@ rankings_table <- function(input_df, input_position, input_player, input_rankers
       if (is.null(input_player)) {
         df <- input_df |>
           dplyr::filter(.data$Pos %in% input_position) |>
-          dplyr::select(c(.data$Player:.data$`AVG Grade`))
+          dplyr::select(c(.data$Player:.data$`AVG Grade`, -.data$`Film%`))
       } else {
         df <- input_df |>
           dplyr::filter(.data$Player %in% input_player) |>
-          dplyr::select(c(.data$Player:.data$`AVG Grade`))
+          dplyr::select(c(.data$Player:.data$`AVG Grade`, -.data$`Film%`))
       }
     } else {
       if (is.null(input_player)) {
         df <- input_df |>
           dplyr::filter(.data$Pos %in% input_position) |>
-          dplyr::select(c(.data$Player:.data$`AVG Grade`), all_of(input_rankers))
+          dplyr::select(c(.data$Player:.data$`AVG Grade`), all_of(input_rankers), -.data$`Film%`)
       } else {
         df <- input_df |>
           dplyr::filter(.data$Player %in% input_player) |>
-          dplyr::select(c(.data$Player:.data$`AVG Grade`), all_of(input_rankers))
+          dplyr::select(c(.data$Player:.data$`AVG Grade`), all_of(input_rankers), -.data$`Film%`)
       }
     }
 
