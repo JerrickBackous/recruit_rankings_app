@@ -12,7 +12,7 @@ RUN Rscript -e 'remotes::install_version("tidyselect",upgrade="never", version =
 RUN Rscript -e 'remotes::install_version("testthat",upgrade="never", version = "3.1.4")'
 RUN Rscript -e 'remotes::install_version("spelling",upgrade="never", version = "2.2")'
 RUN Rscript -e 'remotes::install_version("waiter",upgrade="never", version = "0.2.5")'
-RUN Rscript -e 'remotes::install_version("shinyWidgets",upgrade="never", version = "0.7.2")'
+RUN Rscript -e 'remotes::install_version("shinyWidgets",upgrade="never", version = "0.7.3")'
 RUN Rscript -e 'remotes::install_version("sever",upgrade="never", version = "0.0.7")'
 RUN Rscript -e 'remotes::install_version("reactable",upgrade="never", version = "0.3.0")'
 RUN Rscript -e 'remotes::install_version("lubridate",upgrade="never", version = "1.8.0")'
