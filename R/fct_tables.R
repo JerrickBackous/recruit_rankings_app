@@ -29,7 +29,8 @@ rankings_table <- function(input_df, input_position, input_player, input_rankers
                         `ADJ Grade` =  dplyr::case_when(.data$Pos == "QB" ~ round(rowMeans(select(filter(input_df, .data$Pos %in% input_position), all_of(input_rankers)), na.rm = TRUE) * 1.06, 3),
                                                         .data$Pos == "RB" ~ round(rowMeans(select(filter(input_df, .data$Pos %in% input_position), all_of(input_rankers)), na.rm = TRUE) * 1.03, 3),
                                                         .data$Pos == "WR" ~ round(rowMeans(select(filter(input_df, .data$Pos %in% input_position), all_of(input_rankers)), na.rm = TRUE) * 1.00, 3),
-                                                        .data$Pos == "TE" ~ round(rowMeans(select(filter(input_df, .data$Pos %in% input_position), all_of(input_rankers)), na.rm = TRUE) * 0.96, 3)))
+                                                        .data$Pos == "TE" ~ round(rowMeans(select(filter(input_df, .data$Pos %in% input_position), all_of(input_rankers)), na.rm = TRUE) * 0.96, 3))) |>
+          dplyr::arrange(-.data$`ADJ Grade`)
       } else {
         df <- input_df |>
           dplyr::filter(.data$Player %in% input_player) |>
@@ -38,7 +39,8 @@ rankings_table <- function(input_df, input_position, input_player, input_rankers
                         `ADJ Grade` =  dplyr::case_when(.data$Pos == "QB" ~ round(rowMeans(select(filter(input_df, .data$Player %in% input_player), all_of(input_rankers)), na.rm = TRUE) * 1.06, 3),
                                                         .data$Pos == "RB" ~ round(rowMeans(select(filter(input_df, .data$Player %in% input_player), all_of(input_rankers)), na.rm = TRUE) * 1.03, 3),
                                                         .data$Pos == "WR" ~ round(rowMeans(select(filter(input_df, .data$Player %in% input_player), all_of(input_rankers)), na.rm = TRUE) * 1.00, 3),
-                                                        .data$Pos == "TE" ~ round(rowMeans(select(filter(input_df, .data$Player %in% input_player), all_of(input_rankers)), na.rm = TRUE) * 0.96, 3)))
+                                                        .data$Pos == "TE" ~ round(rowMeans(select(filter(input_df, .data$Player %in% input_player), all_of(input_rankers)), na.rm = TRUE) * 0.96, 3))) |>
+          dplyr::arrange(-.data$`ADJ Grade`)
       }
     }
 
