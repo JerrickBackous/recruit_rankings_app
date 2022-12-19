@@ -17,7 +17,7 @@ RUN Rscript -e 'remotes::install_version("sever",upgrade="never", version = "0.0
 RUN Rscript -e 'remotes::install_version("reactable",upgrade="never", version = "0.4.1")'
 RUN Rscript -e 'remotes::install_version("lubridate",upgrade="never", version = "1.9.0")'
 RUN Rscript -e 'remotes::install_version("golem",upgrade="never", version = "0.3.5")'
-RUN Rscript -e 'remotes::install_version("dplyr",upgrade="never", version = "1.0.9")'
+RUN Rscript -e 'remotes::install_version("dplyr",upgrade="never", version = "1.0.10")'
 RUN Rscript -e 'remotes::install_version("aws.s3",upgrade="never", version = "0.3.21")'
 RUN mkdir /build_zone
 ADD . /build_zone
