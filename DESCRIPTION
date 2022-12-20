@@ -17,7 +17,7 @@ Imports:
     reactable,
     rlang,
     sever,
-    shiny (>= 1.7.1),
+    shiny (>= 1.7.2),
     shinyWidgets,
     stringr,
     tidyselect,
